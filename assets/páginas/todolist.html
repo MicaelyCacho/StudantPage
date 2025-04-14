@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Tarefas - RamStudy</title>
+  <link rel="stylesheet" href="/assets/css/todolist.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+ 
+  <!-- Botão Toggle -->
+ <button id="toggleSidebar" class="btn toggle-btn">
+  ☰
+</button>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+  <img src="/assets/img/logo.png.png" alt="Logo RamStudy" class="logo" />
+  <ul class="nav">
+    <li><a href="/index.html">Início</a></li>
+    <li><a href="/assets/páginas/flash.html">Flashcards</a></li>
+    <li><a href="/assets/páginas/index.html">temporizador</a></li>
+    <li><a href="/assets/páginas/todolist.html">lista organizadora</a></li>
+    <li><a href="/assets/html/youtube.html">playlist</a></li>
+    <li><a href="/assets/páginas/salvos.html">Sobre nós</a></li>
+  </ul>
+  <link rel="stylesheet" href="/assets/css/home.css">
+  <script src="/assets/js/home.js"></script>
+</div>
+
+
+  <h1>📝 Lista de Tarefas RamStudy</h1>
+
+  <div class="main">
+    <input type="text" id="input-tarefa" placeholder="Digite a tarefa...">
+    <button id="btn">
+      <img src="https://www.svgrepo.com/show/379760/add-note.svg" alt="Adicionar tarefa">
+    </button>
+  </div>
+
+  <div id="list"></div>
+
+  <div id="shadow"></div>
+
+  <script src="/assets/js/todo.js"></script>
+
+  <style>
+    .tremor img{
+      animation: shake 0.5s infinite;
+      width: 100px;
+      height: 90px;
+      display: flex;
+      float: 100% left;
+      position: absolute;
+      /* chat para fixar na tela */
+      top: 500px;      /* distância do topo */
+      right: 20px;    /* distância da direita */
+      z-index: 9999;  /* bem alto pra ficar por cima de tudo */
+      position: fixed;
+      border-radius: 200px;
+    
+     }
+          </style>
+           <div class="tremor" style="display: flex; float: right; text-align: right; margin: 10px;">
+        <a href="/assets/páginas/chat.html"><img src="/assets/img/chatboy.png" alt=""></div></a> 
+    
+</body>
+</html>

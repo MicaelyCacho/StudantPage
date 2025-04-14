@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chatbot de Estudos</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/assets/css/chat.css">
+</head>
+<body>
+   <!-- Botão Toggle -->
+   <button id="toggleSidebar" class="btn toggle-btn">
+    ☰
+  </button>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <img src="/assets/img/logo.png.png" alt="Logo RamStudy" class="logo" />
+    <ul class="nav">
+      <li><a href="/index.html">Início</a></li>
+      <li><a href="/assets/páginas/flash.html">Flashcards</a></li>
+      <li><a href="/assets/páginas/index.html">temporizador</a></li>
+      <li><a href="/assets/páginas/todolist.html">lista organizadora</a></li>
+      <li><a href="/assets/html/youtube.html">playlist</a></li>
+      <li><a href="/assets/páginas/salvos.html">Sobre nós</a></li>
+    </ul>
+    <link rel="stylesheet" href="/assets/css/home.css">
+    <script src="/assets/js/home.js"></script>
+  </div>
+
+  <div class="chatbox">
+    <div class="chatbox-header">Chat de Estudos</div>
+    <div class="chatbox-body" id="chatbox-body"></div>
+    <div class="chatbox-footer">
+      <input type="text" id="userInput" placeholder="Digite sua pergunta..."/>
+      <button onclick="sendMessage()">Enviar</button>
+    </div>
+  </div>
+
+  <script>
+    const respostas = {
+      "pronome": [
+        {
+          pergunta: "o que é um pronome",
+          resposta: "Pronome é uma palavra que substitui o nome (substantivo), indicando a pessoa do discurso."
+        },
+        {
+          pergunta: "quais são os tipos de pronomes",
+          resposta: "Os tipos são: pessoais, possessivos, demonstrativos, relativos, interrogativos e indefinidos."
+        }
+      ],
+      "era vargas": [
+        {
+          pergunta: "o que foi a era vargas",
+          resposta: "Foi o período de 1930 a 1945 em que Getúlio Vargas governou o Brasil com forte intervenção do Estado na economia."
+        },
+        {
+          pergunta: "principais ações de vargas",
+          resposta: "Criação da CLT, incentivo à indústria nacional e centralização do poder político."
+        }
+      ],
+      "cultura indígena": [
+        {
+          pergunta: "o que caracteriza a cultura indígena",
+          resposta: "Diversidade de línguas, rituais, crenças e costumes de vários povos nativos."
+        },
+        {
+          pergunta: "como os indígenas viviam antes da colonização",
+          resposta: "Viviam em aldeias, praticavam agricultura, caça e tinham suas próprias formas de organização social."
+        }
+      ]
+    };
+
+    function responderPergunta(perguntaUsuario) {
+      const perguntaFormatada = perguntaUsuario.toLowerCase();
+
+      for (const tema in respostas) {
+        if (perguntaFormatada.includes(tema)) {
+          const conjunto = respostas[tema];
+          for (const item of conjunto) {
+            if (perguntaFormatada.includes(item.pergunta)) {
+              return item.resposta;
+            }
+          }
+        }
+      }
+
+      return "Essa pergunta ainda não consigo responder. Busque fontes confiáveis como 'todamateria.com.br' 😉";
+    }
+
+    function sendMessage() {
+      const userInput = document.getElementById("userInput");
+      const pergunta = userInput.value.trim();
+
+      if (pergunta !== "") {
+        const chatboxBody = document.getElementById("chatbox-body");
+
+        const userDiv = document.createElement("div");
+        userDiv.className = "message user-message";
+        userDiv.textContent = pergunta;
+        chatboxBody.appendChild(userDiv);
+
+        const resposta = responderPergunta(pergunta);
+        const botDiv = document.createElement("div");
+        botDiv.className = "message bot-message";
+        botDiv.textContent = resposta;
+        chatboxBody.appendChild(botDiv);
+
+        chatboxBody.scrollTop = chatboxBody.scrollHeight;
+        userInput.value = "";
+      }
+    }
+
+    document.getElementById("userInput").addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        sendMessage();
+      }
+    });
+  </script>
+
+</body>
+</html>
