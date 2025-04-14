@@ -9,7 +9,7 @@ body {
 
 /* SIDEBAR */
 .sidebar {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 260px;
@@ -134,7 +134,8 @@ footer small {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  margin-left: 300px;
+  grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
   grid-gap: var(--metric-box-spacing);
 }
 

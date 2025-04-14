@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--FOONTE DE TODO O SITE-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <!--LINK COM O CSS-->
+    <link rel="stylesheet" href="/assets/css/flash.css">
     <title>Flash-cards</title>
 </head>
 <body>
@@ -28,60 +36,43 @@
     <link rel="stylesheet" href="/assets/css/home.css">
     <script src="/assets/js/home.js"></script>
   </div>
-        <h1>Flashcards</h1>
-        <div>
-            <button onclick="create()" >Novo card</button>
-            <button onclick="removeAll" >Excluir todos</button>
-        </div>
-   </div> 
+ 
 
-    <div class="card-form" >
-        <div class="card-form-box" >
-            <h2>Criar card</h2>
-            <input type="text" id="question" placeholder="Insira a questão">
-            <input type="text" id="answer" placeholder="Insira a resposta">
-
-            <span class="obs" >Certifique-se de preencher os campos de pergunta e resposta</span>
-                <div class="btns">
-                    <button onclick="save()">Salvar</button>
-                    <button onclick="cancel()">Cancelar</button>
-                </div>
-        </div>
-    </div>
-
-    <div class="Flashcards">
-        <div class="flashcard">
-            <h2>question</h2>
-            <h2>answer</h2>
-            <div class="btns">
-                <button></button>
-                <button></button>
-            </div>
-            <span class="remove"></span>
-        </div>
-    </div>
-<script src="/assets/js/flash.js"></script>
-
-
-<style>
-  .tremor img{
-    animation: shake 0.5s infinite;
-    width: 100px;
-    height: 90px;
-    display: flex;
-    float: 100% left;
-    position: absolute;
-    /* chat para fixar na tela */
-    top: 500px;      /* distância do topo */
-    right: 20px;    /* distância da direita */
-    z-index: 9999;  /* bem alto pra ficar por cima de tudo */
-    position: fixed;
-    border-radius: 200px;
+      <!--<header>
+          <h1>Flashcards</h1>
+       </header> -->
+       <img src="/assets/img/icone.png" alt="" class="icone">
+      
+      <hr class="espaçamento1">
   
-   }
-        </style>
-         <div class="tremor" style="display: flex; float: right; text-align: right; margin: 10px;">
-      <a href="/assets/páginas/chat.html"><img src="/assets/img/chatboy.png" alt=""></div></a> 
+        <main>
+          <!-- Botões gerais -->
+          <div class="controls">
+          <button id="criarFlashcard">Criar</button>
+          <button id="excluirTodos">Excluir todos</button>
+          <!-- <img src="/assets/img/excluir.svg" alt="" class="cancelar"> -->
+          <!-- <img src="/assets/img/salvar.svg" alt="" class="salvar"> -->
+          </div>
   
-</body>
-</html>
+          <hr class="espaçamento1">
+          <hr class="espaçamento1">
+  
+          <!-- Área principal de criação -->
+          <section id="areaCriacao">
+            <h2>Crie o seu flashcard:</h2>
+            <div id="criacaoContainer"></div>
+          </section>
+  
+          <hr class="espaçamento1">
+  
+          <!-- Área Flashcards Prontos -->
+          <section id="areaFlashcards">
+            <h2>Estude os seus flashcards:</h2>
+            <div id="flashcardsProntosContainer"></div>
+          </section>
+        </main>
+  
+      
+  <script src="/assets/js/flash.js"></script>   
+  </body>
+  </html>
