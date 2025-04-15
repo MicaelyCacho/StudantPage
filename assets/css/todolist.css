@@ -61,10 +61,7 @@
     height: 3px;
     width: 3px;
   }
-  img{
-    max-width:10px;
-  }
-  
+ 
   #list {
     width: 100%;
     max-width: 400px;
@@ -127,5 +124,27 @@
   button:hover {
     background-color: #9333ea;
   }
+
+  .nav li {
+    margin-bottom: 5px;
+  }
+  
+  .nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    transition: 0.3s;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background: transparent;
+  }
+  
+  .nav a:hover {
+    background: linear-gradient(90deg, #007bff, #8e2de2);
+    color: white;
+    box-shadow: 0 0 15px #8e2de2;
+  }
+  
   
   

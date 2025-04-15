@@ -1,36 +1,21 @@
 /* GERAL */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Orbitron', sans-serif;
   background-color: #0d0d0d;
   color: #fff;
   transition: all 0.3s ease;
 }
 
-/* SIDEBAR */
-.sidebar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 260px;
-  height: 100vh;
-  background-color: #000000;
-  padding: 20px;
-  transition: all 0.3s ease;
-  overflow-x: hidden;
-  border-right: 2px solid #191919;
-}
 
-.sidebar.collapsed {
-  width: 0;
-  padding: 0;
-  overflow: hidden;
-}
+
 
 .logo {
   width: 100%;
   height: auto;
   margin-bottom: 40px;
+  margin-top: 10px;
 }
 
 /* NAVEGAÇÃO */
@@ -38,6 +23,9 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
+  flex-direction: column;
+  gap: 1px;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .nav li {
@@ -64,6 +52,7 @@ body {
 /* BOTÃO DE COLAPSAR */
 .toggle-btn {
   position: fixed;
+  z-index: 10000;
   top: 20px;
   left: 20px;
   background: linear-gradient(90deg, #007bff, #8e2de2);
@@ -79,6 +68,7 @@ body {
 
 .toggle-btn:hover {
   box-shadow: 0 0 10px #8e2de2;
+  z-index: 9999;
 }
 
 /* CONTEÚDO PRINCIPAL */
@@ -134,8 +124,8 @@ footer small {
 
 .cards {
   display: grid;
-  margin-left: 300px;
-  grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
+  
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
   grid-gap: var(--metric-box-spacing);
 }
 
@@ -218,3 +208,42 @@ footer small {
   background: transparent; /* sem fundo como pediu */
   line-height: 1.6;
 }
+
+/* SIDEBAR */
+.sidebar {
+  z-index: 9999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100vh;
+  background-color: #000000;
+  padding: 20px;
+  transition: all 0.3s ease;
+  overflow-x: hidden;
+  border-right: 2px solid #191919;
+}
+
+.sidebar.collapsed {
+  z-index: 9999;
+  width: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.logo {
+  height: 190px;
+}
+
+  
+.tituloFuncionalidades {
+    font-family: 'Orbitron', sans-serif;
+    padding: 40px;
+    font-size: 60px;
+  }
+
+  .logohome {
+    width: 95%;
+    
+
+  }
